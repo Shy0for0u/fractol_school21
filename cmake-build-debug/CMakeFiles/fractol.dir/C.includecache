@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/dgorold-/fractol/includes/fractol.h
+../libft/includes/libft.h
+/Users/dgorold-/fractol/libft/includes/libft.h
+/usr/local/include/mlx.h
+-
+fcntl.h
+/Users/dgorold-/fractol/includes/fcntl.h
+math.h
+/Users/dgorold-/fractol/includes/math.h
+
+/Users/dgorold-/fractol/libft/includes/libft.h
+unistd.h
+-
+stdlib.h
+-
+string.h
+-
+
+/Users/dgorold-/fractol/main.c
+includes/fractol.h
+/Users/dgorold-/fractol/includes/fractol.h
+
+/usr/local/include/mlx.h
+
