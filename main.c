@@ -6,7 +6,7 @@
 /*   By: dgorold- <dgorold-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/24 17:18:26 by dgorold-          #+#    #+#             */
-/*   Updated: 2019/04/29 19:02:35 by dgorold-         ###   ########.fr       */
+/*   Updated: 2019/07/06 23:15:38 by dgorold-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,8 +86,8 @@ void			julia(t_fcl *fcl)
 	y = 0;
 	movex = 0;
 	movey = 0;
-	cre = -1.9;
-	cim = 1.9;
+	cre = 2 * fcl->ms.prev_x / fcl->height;
+	cim = 2 * fcl->ms.prev_y / fcl->width;
 	while (y < fcl->height)
 	{
 		x = 0;
@@ -162,6 +162,10 @@ int 			mouse_move(int x, int y, t_fcl *fcl)
 	mouse = &fcl->ms;
 	if ((x < 0 || x >= fcl->width || y < 0 || y >= fcl->height) && fcl->ms.stopmove == 0)
 	{
+		if (x >= fcl->width)
+			x = fcl->width;
+		if (x >= fcl->height)
+			x = fcl->height;
 		mouse->prev_x = x;
 		mouse->prev_y = y;
 //		mlx_clear_window(fcl->mlx_ptr, fcl);
@@ -180,8 +184,8 @@ static void		init_image(t_fcl fcl)
 	fcl.win_ptr = mlx_new_window(fcl.mlx_ptr, fcl.width, fcl.height, fcl.file);
 	mlx_hook(fcl.win_ptr, 2, 5, deal_key, &fcl);
 	mlx_hook(fcl.win_ptr, 4, 5, mouse_press, &fcl);
-//	mlx_hook(fcl.win_ptr, 6, 5, mouse_move, &fcl);
-
+	mlx_hook(fcl.win_ptr, 6, 5, mouse_move, &fcl);
+//	mlx_mouse_hook(fcl.win_ptr, mouse_move, &fcl);
 	mlx_loop(fcl.mlx_ptr);
 }
 

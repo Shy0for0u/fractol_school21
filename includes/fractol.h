@@ -36,8 +36,8 @@ typedef struct	s_color
 
 typedef struct	s_mouse
 {
-	int 		prev_x;
-	int 		prev_y;
+	double 		prev_x;
+	double 		prev_y;
 	int 		stopmove;
 }				t_mouse;
 
