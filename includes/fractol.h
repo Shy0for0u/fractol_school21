@@ -16,6 +16,12 @@
 # include "/usr/local/include/mlx.h"
 # include "fcntl.h"
 # include "math.h"
+#include "stdio.h"
+# include "X11/X.h"
+#include "pthread.h"
+#define THREADS 8
+#define HEIGHT 300
+#define WIDTH 300
 
 typedef struct s_image
 {
@@ -36,10 +42,13 @@ typedef struct	s_color
 
 typedef struct	s_mouse
 {
-	double 		prev_x;
-	double 		prev_y;
+	float 		prev_x;
+    float 		prev_y;
+    float	    movex;
+    float	    movey;
 	int 		stopmove;
 }				t_mouse;
+
 
 typedef struct	s_fractol
 {
@@ -53,8 +62,16 @@ typedef struct	s_fractol
 	double		factor;
 	int			width;
 	int			height;
+	struct s_thread     *name;
 	t_mouse		ms;
 	t_image		img;
 }				t_fcl;
+
+typedef struct  s_thread
+{
+    int         index;
+    pthread_t   point;
+    t_fcl       *foo0;
+}               t_thread;
 
 #endif //FRACTOL_FRACTOL_H

@@ -6,17 +6,23 @@
 
 #IncludeRegexTransform: 
 
-/Users/dgorold-/fractol/includes/fractol.h
+/home/ubuntu/CLionProjects/fractol/includes/fractol.h
 ../libft/includes/libft.h
-/Users/dgorold-/fractol/libft/includes/libft.h
+/home/ubuntu/CLionProjects/fractol/libft/includes/libft.h
 /usr/local/include/mlx.h
 -
 fcntl.h
-/Users/dgorold-/fractol/includes/fcntl.h
+/home/ubuntu/CLionProjects/fractol/includes/fcntl.h
 math.h
-/Users/dgorold-/fractol/includes/math.h
+/home/ubuntu/CLionProjects/fractol/includes/math.h
+stdio.h
+/home/ubuntu/CLionProjects/fractol/includes/stdio.h
+X11/X.h
+/home/ubuntu/CLionProjects/fractol/includes/X11/X.h
+pthread.h
+/home/ubuntu/CLionProjects/fractol/includes/pthread.h
 
-/Users/dgorold-/fractol/libft/includes/libft.h
+/home/ubuntu/CLionProjects/fractol/libft/includes/libft.h
 unistd.h
 -
 stdlib.h
@@ -24,9 +30,9 @@ stdlib.h
 string.h
 -
 
-/Users/dgorold-/fractol/main.c
+/home/ubuntu/CLionProjects/fractol/main.c
 includes/fractol.h
-/Users/dgorold-/fractol/includes/fractol.h
+/home/ubuntu/CLionProjects/fractol/includes/fractol.h
 
 /usr/local/include/mlx.h
 

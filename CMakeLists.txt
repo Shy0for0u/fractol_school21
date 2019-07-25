@@ -70,6 +70,9 @@ add_executable(fractol
 		main.c
 		Makefile includes/fractol.h)
 
-target_link_libraries(fractol "-lmlx")
-target_link_libraries(fractol "-framework OpenGl")
-target_link_libraries(fractol "-framework Appkit")
+target_link_libraries(fractol -lm)
+target_link_libraries(fractol "-L/usr/X11/lib /usr/X11/lib/libmlx.a")
+target_link_libraries(fractol "-lX11")
+target_link_libraries(fractol "-lXext")
+target_link_libraries(fractol "-pthread")
+
